@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Interaktif BK - Kelas 7</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .fade-in { animation: fadeIn 0.4s ease-in-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-lg py-6 px-4 md:px-8 text-center rounded-b-3xl">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-white/20 text-emerald-100 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Kurikulum Merdeka • Kelas 7</span>
+            <h1 class="text-2xl md:text-3xl font-bold mt-2">Kenali Potensi & Kelola Emosi</h1>
+            <p class="text-emerald-100 text-sm md:text-base mt-1">Media Pembelajaran Interaktif Bimbingan dan Konseling SMP</p>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="max-w-4xl w-full mx-auto px-4 mt-6">
+        <div class="grid grid-cols-3 gap-2 bg-white/80 backdrop-blur p-1.5 rounded-2xl shadow-sm border border-emerald-100">
+            <button onclick="switchTab(0)" id="tab-btn-0" class="tab-btn py-2.5 px-2 text-xs md:text-sm font-semibold rounded-xl transition duration-200 bg-emerald-600 text-white shadow-sm flex items-center justify-center gap-1.5">
+                <span>📚</span> <span class="hidden sm:inline">Materi</span> & BK
+            </button>
+            <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn py-2.5 px-2 text-xs md:text-sm font-semibold rounded-xl transition duration-200 text-slate-600 hover:bg-slate-100 flex items-center justify-center gap-1.5">
+                <span>🌟</span> Emotometer
+            </button>
+            <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn py-2.5 px-2 text-xs md:text-sm font-semibold rounded-xl transition duration-200 text-slate-600 hover:bg-slate-100 flex items-center justify-center gap-1.5">
+                <span>📝</span> Kuis Literasi
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl w-full mx-auto p-4 md:p-6 my-2 flex-grow">
+        
+        <!-- TAB 0: MATERI & FUNGSI BK -->
+        <section id="tab-content-0" class="tab-content fade-in space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100">
+                <h2 class="text-xl font-bold text-emerald-700 flex items-center gap-2 mb-4">
+                    <span>🧭</span> Kenapa Guru BK Sahabatmu di SMP?
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-4">
+                    Selamat datang di lingkungan SMP! Bimbingan dan Konseling (BK) di Kurikulum Merdeka hadir bukan untuk menghukum, melainkan sebagai wadah pengembangan diri, teman curhat yang aman, serta pemandu potensi terbaikmu agar merdeka belajar dengan bahagia.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-emerald-50/70 p-4 rounded-xl border border-emerald-100">
+                        <h3 class="font-semibold text-emerald-800 flex items-center gap-2 mb-2"><span>🛡️</span> Fungsi Layanan BK</h3>
+                        <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Memahami potensi, bakat, dan minat belajar.</li>
+                            <li>Mengatasi hambatan atau kecemasan penyesuaian diri.</li>
+                            <li>Perencanaan studi lanjut dan karier masa depan.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-teal-50/70 p-4 rounded-xl border border-teal-100">
+                        <h3 class="font-semibold text-teal-800 flex items-center gap-2 mb-2"><span>✨</span> Nilai Religius & Karakter</h3>
+                        <ul class="text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Bersyukur atas karunia potensi diri yang unik.</li>
+                            <li>Menjaga toleransi, integritas, dan akhlak mulia.</li>
+                            <li>Sabar dan ikhlas dalam mengelola emosi harian.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-emerald-600 to-teal-700 text-white rounded-2xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+                <div>
+                    <h3 class="text-lg font-bold">Siap mengeksplorasi emosimu hari ini?</h3>
+                    <p class="text-emerald-100 text-sm mt-1">Coba fitur Emotometer untuk melacak suasana hati dan dapatkan tips pengelolaannya.</p>
+                </div>
+                <button onclick="switchTab(1)" class="bg-white text-emerald-700 font-semibold px-5 py-2.5 rounded-xl shadow hover:bg-emerald-50 transition transform hover:scale-105 shrink-0">
+                    Buka Emotometer →
+                </button>
+            </div>
+        </section>
+
+        <!-- TAB 1: EMOTOMETER -->
+        <section id="tab-content-1" class="tab-content fade-in hidden space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100 text-center">
+                <span class="text-3xl">🌈</span>
+                <h2 class="text-xl font-bold text-emerald-700 mt-2">Emotometer: Catat & Kelola Emosimu</h2>
+                <p class="text-slate-600 text-sm mt-1">Bagaimana kondisi perasaanmu saat berada di sekolah hari ini?</p>
+                
+                <!-- Emotion Selection Buttons -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+                    <button onclick="selectEmotion('senang')" class="emo-card p-4 rounded-xl border-2 border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex flex-col items-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-110 transition">😊</span>
+                        <span class="font-medium text-sm text-slate-700">Senang / Semangat</span>
+                    </button>
+                    <button onclick="selectEmotion('tenang')" class="emo-card p-4 rounded-xl border-2 border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex flex-col items-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-110 transition">😌</span>
+                        <span class="font-medium text-sm text-slate-700">Tenang / Damai</span>
+                    </button>
+                    <button onclick="selectEmotion('cemas')" class="emo-card p-4 rounded-xl border-2 border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex flex-col items-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-110 transition">🌧️</span>
+                        <span class="font-medium text-sm text-slate-700">Cemas / Khawatir</span>
+                    </button>
+                    <button onclick="selectEmotion('marah')" class="emo-card p-4 rounded-xl border-2 border-slate-200 hover:border-emerald-500 hover:bg-emerald-50/50 transition flex flex-col items-center gap-2 group">
+                        <span class="text-3xl group-hover:scale-110 transition">⚡</span>
+                        <span class="font-medium text-sm text-slate-700">Marah / Kesal</span>
+                    </button>
+                </div>
+
+                <!-- Feedback & Tips Box -->
+                <div id="emotion-result" class="mt-6 hidden bg-emerald-50 border border-emerald-200 rounded-xl p-5 text-left transition-all">
+                    <h3 id="emo-title" class="font-bold text-emerald-800 text-base flex items-center gap-2"></h3>
+                    <p id="emo-desc" class="text-sm text-slate-700 mt-2 leading-relaxed"></p>
+                    <div class="mt-4 pt-3 border-t border-emerald-200/60 flex items-center justify-between text-xs text-emerald-700 font-medium">
+                        <span>💡 Tips Guru BK untukmu:</span>
+                        <span id="emo-quote">Ingat, semua emosi itu wajar, yang penting cara mengelolanya!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: KUIS LITERASI & NUMERASI -->
+        <section id="tab-content-2" class="tab-content fade-in hidden space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-emerald-100">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-emerald-700 flex items-center gap-2">
+                        <span>📝</span> Kuis Literasi & Numerasi Kontekstual
+                    </h2>
+                    <span id="quiz-score" class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">Skor: 0 / 2</span>
+                </div>
+                <p class="text-slate-600 text-sm mb-6">Jawab studi kasus di bawah ini untuk menguji kemampuan bernalar kritis dan pengelolaan dirimu dalam kehidupan sehari-hari.</p>
+
+                <!-- Question 1 (Literasi) -->
+                <div class="space-y-4 pb-6 border-b border-slate-100">
+                    <div class="flex items-start gap-3">
+                        <span class="bg-emerald-600 text-white font-bold text-xs px-2.5 py-1 rounded-lg mt-0.5">Literasi 1</span>
+                        <div>
+                            <h3 class="font-semibold text-slate-800 text-sm md:text-base">Mengenali Potensi & Keunikan Diri</h3>
+                            <p class="text-slate-600 text-sm mt-1">Raka merasa minder karena ia belum mahir bermain sepak bola seperti teman-teman sekelasnya. Namun, ia sangat terampil membuat kerajinan tangan dari barang bekas dan tekun membantu ibunya di rumah. Sikap bijak yang sesuai dengan pengembangan potensi diri Raka adalah...</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-2.5 pl-0 md:pl-10" id="q1-options">
+                        <button onclick="checkAnswer(1, 0, false)" class="q1-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">A. Memaksa diri berhenti membuat kerajinan dan terus berlatih bola agar dipuji.</button>
+                        <button onclick="checkAnswer(1, 1, true)" class="q1-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">B. Mengembangkan bakat kerajinan tangannya dengan percaya diri sambil tetap menjaga kesehatan tubuh.</button>
+                        <button onclick="checkAnswer(1, 2, false)" class="q1-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">C. Menutup diri dan marah kepada teman yang pandai bermain bola.</button>
+                    </div>
+                    <div id="q1-feedback" class="hidden pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl"></div>
+                </div>
+
+                <!-- Question 2 (Numerasi) -->
+                <div class="space-y-4 pt-6">
+                    <div class="flex items-start gap-3">
+                        <span class="bg-teal-600 text-white font-bold text-xs px-2.5 py-1 rounded-lg mt-0.5">Numerasi 2</span>
+                        <div>
+                            <h3 class="font-semibold text-slate-800 text-sm md:text-base">Skala Prioritas & Pengelolaan Waktu Belajar</h3>
+                            <p class="text-slate-600 text-sm mt-1">Dalam waktu luang 5 jam sehari di rumah, Maya mengalokasikan 40% waktunya untuk membantu orang tua & istirahat, 20% untuk hobi menggambar, dan sisanya untuk mengulang pelajaran sekolah. Berapa jam waktu yang Maya gunakan untuk mengulang pelajaran sekolah?</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-2.5 pl-0 md:pl-10" id="q2-options">
+                        <button onclick="checkAnswer(2, 0, false)" class="q2-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">A. 1 Jam</button>
+                        <button onclick="checkAnswer(2, 1, true)" class="q2-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">B. 2 Jam (40% dari 5 jam)</button>
+                        <button onclick="checkAnswer(2, 2, false)" class="q2-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition">C. 2,5 Jam</button>
+                    </div>
+                    <div id="q2-feedback" class="hidden pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl"></div>
+                </div>
+
+                <!-- Reset Quiz Button -->
+                <div class="mt-8 text-center pt-4 border-t border-slate-100">
+                    <button onclick="resetQuiz()" class="text-xs text-slate-500 hover:text-emerald-600 underline font-medium">Ulangi Kuis</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-xs text-slate-500 border-t border-slate-200/60 mt-auto">
+        <p>Media Pembelajaran BK Kelas 7 SMP • Dirancang untuk Kurikulum Merdeka 🌟</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(index) {
+            const tabs = [0, 1, 2];
+            tabs.forEach(i => {
+                const btn = document.getElementById(`tab-btn-${i}`);
+                const content = document.getElementById(`tab-content-${i}`);
+                
+                if(i === index) {
+                    btn.className = "tab-btn py-2.5 px-2 text-xs md:text-sm font-semibold rounded-xl transition duration-200 bg-emerald-600 text-white shadow-sm flex items-center justify-center gap-1.5";
+                    content.classList.remove('hidden');
+                } else {
+                    btn.className = "tab-btn py-2.5 px-2 text-xs md:text-sm font-semibold rounded-xl transition duration-200 text-slate-600 hover:bg-slate-100 flex items-center justify-center gap-1.5";
+                    content.classList.add('hidden');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Emotometer Logic
+        function selectEmotion(type) {
+            const resultBox = document.getElementById('emotion-result');
+            const titleElem = document.getElementById('emo-title');
+            const descElem = document.getElementById('emo-desc');
+            const quoteElem = document.getElementById('emo-quote');
+            
+            resultBox.classList.remove('hidden');
+            resultBox.classList.add('fade-in');
+
+            if(type === 'senang') {
+                titleElem.innerHTML = "<span>😊</span> Suasana Hati: Senang / Semangat";
+                descElem.innerHTML = "Energi positif ini sangat baik untuk menyerap ilmu baru dan berinteraksi positif dengan teman sebaya. Pertahankan rasa syukurmu kepada Tuhan Yang Maha Esa atas hari yang produktif ini!";
+                quoteElem.innerText = "Syukuri setiap kebaikan kecil yang kamu temui hari ini.";
+            } else if(type === 'tenang') {
+                titleElem.innerHTML = "<span>😌</span> Suasana Hati: Tenang / Damai";
+                descElem.innerHTML = "Kondisi pikiran yang tenang membuatmu lebih mudah fokus dalam memahami materi pelajaran dan mengambil keputusan bijak saat menghadapi masalah.";
+                quoteElem.innerText = "Ketenangan adalah awal dari keputusan yang hebat.";
+            } else if(type === 'cemas') {
+                titleElem.innerHTML = "<span>🌧️</span> Suasana Hati: Cemas / Khawatir";
+                descElem.innerHTML = "Wajar jika sesekali merasa cemas (misal saat menghadapi tugas baru). Cobalah teknik pernapasan: Tarik napas 4 detik, tahan 4 detik, hembuskan perlahan. Jangan ragu bercerita pada Guru BK!";
+                quoteElem.innerText = "Kamu tidak sendiri; selalu ada ruang aman di ruang BK.";
+            } else if(type === 'marah') {
+                titleElem.innerHTML = "<span>⚡</span> Suasana Hati: Marah / Kesal";
+                descElem.innerHTML = "Saat emosi memuncak, berhentilah sejenak (pause). Hitung 1 sampai 10 di dalam hati sebelum merespons situasi. Hindari perkataan atau tindakan yang dapat merugikan diri sendiri maupun orang lain.";
+                quoteElem.innerText = "Kuasai emosimu, jangan biarkan emosi menguasaimu.";
+            }
+        }
+
+        // Quiz Logic
+        let score = 0;
+        let answeredQ1 = false;
+        let answeredQ2 = false;
+
+        function checkAnswer(questionNum, optionIndex, isCorrect) {
+            if(questionNum === 1) {
+                if(answeredQ1) return;
+                answeredQ1 = true;
+                
+                const buttons = document.querySelectorAll('.q1-opt');
+                const feedback = document.getElementById('q1-feedback');
+                feedback.classList.remove('hidden');
+                
+                buttons.forEach((btn, idx) => {
+                    btn.disabled = true;
+                    if(idx === 1) {
+                        btn.classList.add('bg-emerald-100', 'border-emerald-500', 'font-semibold');
+                    } else if(idx === optionIndex && !isCorrect) {
+                        btn.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-700');
+                    }
+                });
+
+                if(isCorrect) {
+                    score++;
+                    feedback.className = "pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200";
+                    feedback.innerText = "Benar! Setiap siswa memiliki potensi unik. Mengembangkan keterampilan tangan sembari menjaga kesehatan adalah wujud kemandirian dan rasa syukur.";
+                } else {
+                    feedback.className = "pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl bg-rose-50 text-rose-800 border border-rose-200";
+                    feedback.innerText = "Kurang tepat. Potensi diri setiap anak berbeda-beda dan perlu diasah dengan percaya diri tanpa harus memaksakan diri menjadi orang lain.";
+                }
+            } else if(questionNum === 2) {
+                if(answeredQ2) return;
+                answeredQ2 = true;
+                
+                const buttons = document.querySelectorAll('.q2-opt');
+                const feedback = document.getElementById('q2-feedback');
+                feedback.classList.remove('hidden');
+                
+                buttons.forEach((btn, idx) => {
+                    btn.disabled = true;
+                    if(idx === 1) {
+                        btn.classList.add('bg-emerald-100', 'border-emerald-500', 'font-semibold');
+                    } else if(idx === optionIndex && !isCorrect) {
+                        btn.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-700');
+                    }
+                });
+
+                if(isCorrect) {
+                    score++;
+                    feedback.className = "pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200";
+                    feedback.innerText = "Benar! Total waktu belajar = 100% - (40% + 20%) = 40%. Maka 40% dari 5 jam = 0,4 x 5 jam = 2 Jam. Pintar dalam manajemen waktu!";
+                } else {
+                    feedback.className = "pl-0 md:pl-10 text-xs md:text-sm font-medium p-3 rounded-xl bg-rose-50 text-rose-800 border border-rose-200";
+                    feedback.innerText = "Kurang tepat. Hitung persentase sisa waktu belajar (100% - 60% = 40%), lalu kalikan dengan total waktu (40% x 5 jam = 2 Jam).";
+                }
+            }
+
+            document.getElementById('quiz-score').innerText = `Skor: ${score} / 2`;
+        }
+
+        function resetQuiz() {
+            score = 0;
+            answeredQ1 = false;
+            answeredQ2 = false;
+            document.getElementById('quiz-score').innerText = `Skor: 0 / 2`;
+            
+            // Reset Q1
+            const q1Buttons = document.querySelectorAll('.q1-opt');
+            q1Buttons.forEach(btn => {
+                btn.disabled = false;
+                btn.className = "q1-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition";
+            });
+            document.getElementById('q1-feedback').classList.add('hidden');
+
+            // Reset Q2
+            const q2Buttons = document.querySelectorAll('.q2-opt');
+            q2Buttons.forEach(btn => {
+                btn.disabled = false;
+                btn.className = "q2-opt text-left p-3 rounded-xl border border-slate-200 text-sm text-slate-700 hover:bg-slate-50 transition";
+            });
+            document.getElementById('q2-feedback').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
